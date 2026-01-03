@@ -59,18 +59,36 @@ const [dateRange, setDateRange] = useState<DateRangeKey>("1M");
       (t) => new Date(t.date) >= startDate && new Date(t.date) <= endOfDay(now)
     );
   // Group transactions by date
-    const grouped = filtered.reduce((acc, transaction) => {
-      const date = format(new Date(transaction.date), "MMM dd");
-      if (!acc[date]) {
-        acc[date] = { date, income: 0, expense: 0 };
-      }
-      if (transaction.type === "INCOME") {
-        acc[date].income += transaction.amount;
-      } else {
-        acc[date].expense += transaction.amount;
-      }
-      return acc;
-    }, {});
+    // const grouped = filtered.reduce((acc, transaction) => {
+    //   const date = format(new Date(transaction.date), "MMM dd");
+    //   if (!acc[date]) {
+    //     acc[date] = { date, income: 0, expense: 0 };
+    //   }
+    //   if (transaction.type === "INCOME") {
+    //     acc[date].income += transaction.amount;
+    //   } else {
+    //     acc[date].expense += transaction.amount;
+    //   }
+    //   return acc;
+    // }, {});
+    const grouped = filtered.reduce<
+  Record<string, { date: string; income: number; expense: number }>
+>((acc, transaction) => {
+  const date = format(new Date(transaction.date), "MMM dd");
+
+  if (!acc[date]) {
+    acc[date] = { date, income: 0, expense: 0 };
+  }
+
+  if (transaction.type === "INCOME") {
+    acc[date].income += transaction.amount;
+  } else {
+    acc[date].expense += transaction.amount;
+  }
+
+  return acc;
+}, {});
+
 
         // Convert to array and sort by date
     return Object.values(grouped).sort(
@@ -109,7 +127,12 @@ const [dateRange, setDateRange] = useState<DateRangeKey>("1M");
         <CardTitle className="text-base font-normal">
           Transaction Overview
         </CardTitle>
-        <Select defaultValue={dateRange} onValueChange={setDateRange}>
+        {/* <Select defaultValue={dateRange} onValueChange={setDateRange}> */}
+        <Select
+  defaultValue={dateRange}
+  onValueChange={(value) => setDateRange(value as DateRangeKey)}
+>
+
           <SelectTrigger className="w-[140px]">
             <SelectValue placeholder="Select range" />
           </SelectTrigger>
