@@ -177,14 +177,21 @@ const DashboardOverview = ({ accounts, transactions }) => {
                       />
                     ))}
                   </Pie>
-<Tooltip
+{/* <Tooltip
                     formatter={(value) => `$${value.toFixed(2)}`}
                     contentStyle={{
                       backgroundColor: "hsl(var(--popover))",
                       border: "1px solid hsl(var(--border))",
                       borderRadius: "var(--radius)",
                     }}
-                  />
+                  /> */}
+                  <Tooltip
+  formatter={(value) => {
+    const num = typeof value === "number" ? value : Number(value);
+    return `$${num.toFixed(2)}`;
+  }}
+/>
+
                   <Legend  layout="horizontal"
   verticalAlign="bottom"
   align="center" />
