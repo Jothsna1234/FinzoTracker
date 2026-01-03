@@ -39,7 +39,7 @@
     "app/main/layout.js",
     "app/(main)/layout.jsx",
     ".next/dev/types/**/*.ts"
-, "actions/account.js", "app/(main)/account/[id]/page.tsx", "lib/prisma.js", "lib/utils.js", "data/landing.js", "components/ui/button.tsx", "components/ui/badge.tsx"  ],
+, "actions/account.js", "app/(main)/account/[id]/page.tsx", "lib/prisma.js", "lib/utils.js", "data/landing.js", "components/ui/button.tsx", "components/ui/badge.tsx", "app/(main)/account/[id]/_components/transaction-overview.jsx"  ],
   "exclude": [
     "node_modules"
   ]
