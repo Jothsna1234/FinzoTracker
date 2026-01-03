@@ -39,7 +39,7 @@
     "app/main/layout.js",
     "app/(main)/layout.jsx",
     ".next/dev/types/**/*.ts"
-, "actions/account.js", "app/(main)/account/[id]/page.jsx", "lib/prisma.js", "lib/utils.js", "data/landing.js", "components/ui/button.tsx", "components/ui/badge.tsx", "app/(main)/account/[id]/_components/transaction-overview.jsx", "app/(main)/account/[id]/_components/transaction-table.jsx"  ],
+, "actions/account.js", "app/(main)/account/[id]/page.jsx", "lib/prisma.js", "lib/utils.js", "data/landing.js", "components/ui/button.tsx", "components/ui/badge.tsx", "app/(main)/account/[id]/_components/transaction-overview.jsx", "app/(main)/account/[id]/_components/transaction-table.jsx", "app/(main)/dashboard/_components/account-card.jsx", "app/(main)/dashboard/_components/budget-progress.jsx", "app/(main)/transaction/_components/recipt-scanner.jsx", "app/(main)/transaction/_components/transaction-form.jsx", "app/page.jsx", "app/layout.jsx", "app/not-found.jsx"  ],
   "exclude": [
     "node_modules"
   ]
