@@ -13,11 +13,35 @@
 // };
 
 // export default nextConfig;
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "randomuser.me",
+//       },
+//     ],
+//   },
+//   experimental: {
+//     turbopack: true,       // keep using Turbopack
+//     disableSourceMaps: true,
+//     serverActions:{
+//       bodySizeLimit:"5mb",
+//     } // <--- prevents the Invalid source map error
+//   },
+// };
+
+// export default nextConfig;
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+
   images: {
     remotePatterns: [
       {
@@ -26,13 +50,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
   experimental: {
-    turbopack: true,       // keep using Turbopack
-    disableSourceMaps: true,
-    serverActions:{
-      bodySizeLimit:"5mb",
-    } // <--- prevents the Invalid source map error
+    serverActions: {
+      bodySizeLimit: "5mb",
+    },
   },
 };
 
 export default nextConfig;
+
