@@ -91,9 +91,14 @@ const [dateRange, setDateRange] = useState<DateRangeKey>("1M");
 
 
         // Convert to array and sort by date
+    // return Object.values(grouped).sort(
+    //   (a, b) => new Date(a.date) - new Date(b.date)
+    // );
     return Object.values(grouped).sort(
-      (a, b) => new Date(a.date) - new Date(b.date)
-    );
+  (a, b) =>
+    new Date(a.date).getTime() - new Date(b.date).getTime()
+);
+
 
 
 
