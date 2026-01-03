@@ -81,7 +81,7 @@ const DashboardOverview = ({ accounts, transactions }: Props) => {
     );
   });
 
-  // Group expenses by category (TS SAFE)
+  // Group expenses by category
   const expensesByCategory = currentMonthExpenses.reduce(
     (acc: Record<string, number>, transaction) => {
       const category = transaction.category;
@@ -92,13 +92,14 @@ const DashboardOverview = ({ accounts, transactions }: Props) => {
     {}
   );
 
-  // Pie chart data
-  const pieChartData = Object.entries(expensesByCategory).map(
-    ([category, amount]) => ({
-      name: category,
-      value: Number(amount),
-    })
-  );
+  // Pie chart data (explicit typing)
+  const pieChartData: { name: string; value: number }[] =
+    Object.entries(expensesByCategory).map(
+      ([category, amount]) => ({
+        name: category,
+        value: Number(amount),
+      })
+    );
 
   return (
     <div className="grid gap-4 md:grid-cols-2">
@@ -211,12 +212,12 @@ const DashboardOverview = ({ accounts, transactions }: Props) => {
                   </Pie>
 
                   <Tooltip
-                    formatter={(value) => {
-                      const num =
+                    formatter={(value: number | string) => {
+                      const amount =
                         typeof value === "number"
                           ? value
                           : Number(value);
-                      return `$${num.toFixed(2)}`;
+                      return `$${amount.toFixed(2)}`;
                     }}
                   />
 
