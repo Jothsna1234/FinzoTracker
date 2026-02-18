@@ -17,25 +17,32 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    ".next\\dev/types/**/*.ts",
+    ".next\\dev/types/**/*.ts",
+    "lib/checkUser.js",
+    "app/main/layout.js",
+    "app/(main)/layout.tsx",
     ".next/dev/types/**/*.ts"
-  ],
+, "actions/account.js", "app/(main)/account/[id]/page.tsx", "lib/prisma.js", "lib/utils.js", "data/landing.js", "components/ui/button.tsx", "components/ui/badge.tsx", "app/(main)/account/[id]/_components/transaction-overview.tsx", "app/(main)/account/[id]/_components/transaction-table.tsx", "app/(main)/dashboard/_components/account-card.tsx", "app/(main)/dashboard/_components/budget-progress.tsx", "app/(main)/transaction/_components/recipt-scanner.tsx", "app/(main)/transaction/_components/transaction-form.tsx", "app/page.tsx", "app/layout.tsx", "app/not-found.tsx"  ],
   "exclude": [
     "node_modules"
   ]
 }
+
+

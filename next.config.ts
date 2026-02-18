@@ -37,40 +37,10 @@
 
 // export default nextConfig;
 
-// import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
-// const nextConfig: NextConfig = {
-//   reactStrictMode: true,
-
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: "https",
-//         hostname: "randomuser.me",
-//       },
-//     ],
-//   },
-
-//   experimental: {
-//     serverActions: {
-//       bodySizeLimit: "5mb",
-//     },
-//   },
-// };
-
-// export default nextConfig;
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   reactStrictMode: true,
-
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 
   images: {
     remotePatterns: [
@@ -88,4 +58,5 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
+
